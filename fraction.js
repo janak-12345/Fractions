@@ -9,3 +9,14 @@ class Fraction {
     const newDenominator = this.denominator * other.denominator;
     return new Fraction(newNumerator, newDenominator);
   }
+subtract(other) {
+    let lcm = this.lcm(this.denominator, other.denominator);
+    let newNumerator = (lcm / this.denominator * this.numerator) - (lcm / other.denominator * other.numerator);
+    return new Fraction(newNumerator, lcm);
+  }
+
+  multiply(other) {
+    let newNumerator = this.numerator * other.numerator;
+    let newDenominator = this.denominator * other.denominator;
+    return new Fraction(newNumerator, newDenominator);
+  }
